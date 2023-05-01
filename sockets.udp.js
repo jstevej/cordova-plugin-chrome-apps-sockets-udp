@@ -53,7 +53,6 @@ exports.send = function(socketId, data, address, port, successCallback, errorCal
         throw new Error('chrome.sockets.udp.send - data is not an ArrayBuffer! (Got: ' + type + ')');
     }
 
-    log.debug(
     exec(successCallback, errorCallback, 'ChromeSocketsUdp', 'send', [socketId, address, port, data]);
 };
 
