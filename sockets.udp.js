@@ -61,7 +61,7 @@ exports.close = function(socketId, successCallback, errorCallback) {
 };
 
 exports.getInfo = function(socketId, successCallback, errorCallback) {
-    var win = callback && function(result) {
+    var win = successCallback && function(result) {
         result.persistent = !!result.persistent;
         result.paused = !!result.paused;
         successCallback(result);
@@ -70,7 +70,7 @@ exports.getInfo = function(socketId, successCallback, errorCallback) {
 };
 
 exports.getSockets = function(successCallback) {
-    var win = callback && function(results) {
+    var win = successCallback && function(results) {
         for (var result in results) {
             result.persistent = !!result.persistent;
             result.paused = !!result.paused;
